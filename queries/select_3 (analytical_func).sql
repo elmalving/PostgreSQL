@@ -1,5 +1,4 @@
 SELECT
-    COUNT(*) OVER () AS total_rows
+    RANK() OVER (PARTITION BY skupina ORDER BY datum_narozeni) AS total_rows
 FROM student
-WHERE id_adresa = 2
-LIMIT 1;
+WHERE id_adresa = 2;
